@@ -1,6 +1,6 @@
 update: venv/bin/python
 	venv/bin/python stack.py thelaunch.ninja
-	aws s3 sync www/ s3://thelaunch.ninja --delete --acl public-read
+	venv/bin/aws s3 sync www/ s3://thelaunch.ninja --delete --acl public-read
 
 
 venv/bin/python:
