@@ -176,3 +176,21 @@ More time to shape your idea<br>Build working product in 2 days<br>Discuss marke
 </div>
 </div>
 </div>
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "url": "http://thelaunch.ninja",
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "email": "ross@thelaunch.ninja",
+    "contactType": "consultation"
+   }],
+   "founder": {
+     "@type": "Person",
+     "@id": "http://rossfenning.co.uk/#me,
+	 "name": "Ross Fenning"
+   }
+}
+</script>
