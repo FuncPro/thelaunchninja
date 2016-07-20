@@ -33,5 +33,29 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 THEME = './theme'
-INDEX_SAVE_AS = 'blog.html'
+INDEX_SAVE_AS = 'blog/index.html'
 
+
+MENUITEMS = [('Home', '/'), ('Blog', '/blog/')]
+# Pages
+
+PAGE_URL = '{slug}'
+PAGE_SAVE_AS = '{slug}/index.html'
+
+# Blog
+
+ARTICLE_URL = '{slug}/'
+ARTICLE_SAVE_AS = '{slug}/index.html'
+
+TAGS_SAVE_AS = 'tags/index.html'
+
+TAG_URL = 'tags/{slug}/'
+TAG_SAVE_AS = 'tags/{slug}/index.html'
+
+CATEGORY_URL = 'category/{slug}/'
+CATEGORY_SAVE_AS = 'category/{slug}/index.html'
+
+AUTHOR_URL = 'authors/{slug}/'
+AUTHOR_SAVE_AS = 'authors/{slug}/index.html'
+
+ARCHIVES_SAVE_AS = 'archives/index.html'

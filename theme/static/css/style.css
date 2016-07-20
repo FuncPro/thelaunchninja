@@ -23,6 +23,7 @@ body {
 	background: #fff; 
 	margin: 0; 
 	color: #5a5a5a;
+	padding-bottom: 70px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -31,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-p { 
+p, section#content ul li { 
 	padding: 0; 
 	margin-bottom: 12px; 
     font-family: 'Lato', sans-serif;
@@ -40,6 +41,10 @@ p {
 	line-height: 28px;
 	color: #666; 
 	margin-top: 10px; 
+}
+
+section#content ul li {
+    margin-left: 2em;
 }
 
 html,
@@ -162,6 +167,12 @@ input {
 }
 
 /* HEADER SECTION */
+
+nav {
+	background: #1e2827;
+	color: white;
+}
+
 #subheaderone {
     width:100%;
     min-height:700px;
@@ -337,3 +348,21 @@ h5.tag {
 	color: white;
 }
 
+ol#post-list {
+    list-style: none;
+}
+section#content {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+footer.post-info abbr {
+    display: inline-block;
+}
+footer.post-info address {
+    display: none;
+}
+
+div.entry-content {
+    text-align: left;
+}

@@ -11,7 +11,7 @@
     <title>The Launch Ninja -- Start-up Non-Consultant</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/theme/css/bootstrap.css" rel="stylesheet">
 
 
     <!-- Custom styles for this template -->
@@ -31,8 +31,38 @@
   </head>
 
   <body>
+    <header>
+      <nav class="navbar navbar-inverse navbar-fixed-bottom" >
+   <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+ </button>
+    </div>
+    </div>
+ <ul class="nav navbar-nav">
+        {% for title, link in MENUITEMS %}
+            <li><a href="{{ link }}">{{ title }}</a></li>
+        {% endfor %}
+        {% if DISPLAY_PAGES_ON_MENU %}
+          {% for p in PAGES %}
+            <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+          {% endfor %}
+        {% else %}
+          {% if DISPLAY_CATEGORIES_ON_MENU %}
+            {% for cat, null in categories %}
+              <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+            {% endfor %}
+          {% endif %}
+              {% endif %}
 
-  <section id="subheaderone" class="clearfix"> 
+	</ul>
+      </nav>
+      <section id="subheaderone" class="clearfix"> 
     <h1>The Launch Ninja</h1>
     <h2>Start-up Non-Consultant</h2>
     <div class="earth"></div>
@@ -49,7 +79,7 @@
      <div class="star11"></div>
      <div class="star12"></div>   
   </section><!-- END Subheader-->
-
+</header>
 	<main>
         {% block content %}
           {% endblock %}
