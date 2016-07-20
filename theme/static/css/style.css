@@ -168,9 +168,20 @@ input {
 
 /* HEADER SECTION */
 
+body > header {
+	background: #1e2827;
+	color: white;
+}
+
 nav {
 	background: #1e2827;
 	color: white;
+}
+
+nav ul li {
+    display: inline-block;
+    float: left;
+    padding: 1em;
 }
 
 #subheaderone {
@@ -365,4 +376,8 @@ footer.post-info address {
 
 div.entry-content {
     text-align: left;
+}
+
+p.backlink {
+    text-align: right;
 }

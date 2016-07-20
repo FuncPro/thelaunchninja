@@ -37,7 +37,7 @@ help:
 	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html'
 	@echo '                                                                       '
 
-update: venv/bin/python
+update: venv/bin/python publish
 	venv/bin/python stack.py thelaunch.ninja
 	venv/bin/aws s3 sync $(OUTPUTDIR)/ s3://thelaunch.ninja --delete --acl public-read
 
