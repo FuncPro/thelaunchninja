@@ -48,7 +48,7 @@ venv/bin/python venv/bin/pip:
 	virtualenv -p python3 venv
 
 $(PELICAN): venv/bin/pip
-	venv/bin/pip install pelican
+	venv/bin/pip install pelican markdown
 
 html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
