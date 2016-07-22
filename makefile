@@ -1,5 +1,5 @@
 PY?=python
-PELICAN?=pelican
+PELICAN?=venv/bin/pelican
 PELICANOPTS=
 
 BASEDIR=$(CURDIR)
@@ -37,13 +37,18 @@ help:
 	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html'
 	@echo '                                                                       '
 
-update: venv/bin/python publish
+venv/bin/aws: venv/bin/pip
+	venv/bin/pip install awscli boto3 troposphere
+
+update: venv/bin/python publish venv/bin/aws
 	venv/bin/python stack.py thelaunch.ninja
 	venv/bin/aws s3 sync $(OUTPUTDIR)/ s3://thelaunch.ninja --delete --acl public-read
 
-venv/bin/python:
+venv/bin/python venv/bin/pip:
 	virtualenv -p python3 venv
-	venv/bin/pip install troposphere boto3 awscli
+
+$(PELICAN): venv/bin/pip
+	venv/bin/pip install pelican
 
 html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
