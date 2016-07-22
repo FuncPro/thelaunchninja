@@ -52,6 +52,7 @@ $(PELICAN): venv/bin/pip
 
 html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+	test -f $(OUTPUTDIR)/index.html
 
 clean:
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
